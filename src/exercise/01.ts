@@ -1,8 +1,7 @@
-// STYLE CSS
+// exo
 // http://localhost:3000/alone/exercise/01.js
 
-import * as React from 'react'
-
+export const a = ""
 
 // 🤖 Utilise className pour la taille et le style (backgroundColor) pour la couleur
 // 🤖 chaque element doive avoir "container" className appliqué
@@ -13,12 +12,4 @@ import * as React from 'react'
 // 🐶 Ajoute egalement un prop style sur chaque element pour changer le backgroundColor 
 // le text doit aussi etre en italique `fontStyle: 'italic'`
 
-function App() {
-  return (
-    <div>
-     
-    </div>
-  )
-}
 
-export default App
