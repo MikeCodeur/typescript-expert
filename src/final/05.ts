@@ -1,30 +1,33 @@
 // Styling
 // http://localhost:3000/alone/final/01.js
 
-//https://www.typescriptlang.org/docs/handbook/decorators.html
-export const a = ""
+// ❌ NE PAS MODIFIER
+// Utilitaire ne faisant pas partie de l'exercice
+import displayText, {init} from './helper/exerciseHelper'
+init()
 
-// UTILY TYPES COLLECTION 
 //Exclude
-type SomeLanguage = "js" | "ts" | "java"
-type GoodLanguage = Exclude<SomeLanguage, "java">;
+type SomeLanguage = 'js' | 'ts' | 'java'
+type GoodLanguage = Exclude<SomeLanguage, 'java'>
 
-const l:GoodLanguage = "js"
+const lang: GoodLanguage = 'js'
+displayText(`good lang ${lang}`)
 
-type TypeSpecial = string | number| Function
-type Writable = Exclude<TypeSpecial, Function>;
+type TypeSpecial = string | number | Function
+type Writable = Exclude<TypeSpecial, Function>
 
-const ts : TypeSpecial = ()=>{}
+const ts: TypeSpecial = () => {}
 //const w : Writable = ()=>{}
 
-//Extract 
-type OldLangage = Extract<SomeLanguage , "java">;
-type F = Extract<TypeSpecial ,Function>;
+//Extract
+type OldLangage = Extract<SomeLanguage, 'java'>
+type F = Extract<TypeSpecial, Function>
 
 //NOnNull
 type Age = string | number | undefined | null
 type NonNullAge = NonNullable<Age>
 
-type UPPER = Uppercase<string>
-
-const name : UPPER = "MMM"
+/*
+eslint
+  @typescript-eslint/no-unused-vars: "off"
+*/

@@ -1,15 +1,43 @@
-// exo
-// http://localhost:3000/alone/exercise/01.js
+// Décorateurs
+// http://localhost:3000/alone/final/02.ts
 
-export const a = ""
+// ❌ NE PAS MODIFIER
+// Utilitaire ne faisant pas partie de l'exercice
+import displayText, {init} from './helper/exerciseHelper'
+init()
 
-// 🤖 Utilise className pour la taille et le style (backgroundColor) pour la couleur
-// 🤖 chaque element doive avoir "container" className appliqué
+// ✔️ Début de l'exercice
 
-// 🐶 ajoute un props className à chaque element avec le bon nonm 
-// 🤖 Les class names dispo: container, container--large, container--medium, container--small
+// 🐶 implemente la fonction sealed qui sera utiliser comme decorateur de classe
+function sealed(constructor: Function) {
+  console.log('sealed()', constructor)
+  // 🤖 utilise Object.seal pour interdire la redefinition du constructeur
+  // 📝 doc https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/seal
+}
 
-// 🐶 Ajoute egalement un prop style sur chaque element pour changer le backgroundColor 
-// le text doit aussi etre en italique `fontStyle: 'italic'`
+// 🐶 utilise le decorateur @sealed sur la classe Book
+// et constate que le code : Book.constructor = () => {}
+// génére une erreur : Cannot add property constructor, object is not extensible
+class Book {
+  type = 'pdf'
+  title: string
 
+  constructor(t: string) {
+    this.title = t
+  }
+  getName() {
+    return this.title
+  }
+}
+Book.constructor = () => {}
+const book = new Book('Harry Potter')
 
+displayText(book.getName())
+
+const book2 = new Book('La semaine de 4h')
+displayText(book2.getName())
+
+/*
+eslint
+  @typescript-eslint/no-unused-vars: "off"
+*/

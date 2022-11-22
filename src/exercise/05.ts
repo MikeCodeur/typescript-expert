@@ -1,15 +1,41 @@
 // exo
-// http://localhost:3000/alone/exercise/01.js
+// Utility Types
+// http://localhost:3000/alone/final/03.ts
 
-export const a = ""
+// ❌ NE PAS MODIFIER
+// Utilitaire ne faisant pas partie de l'exercice
+import displayText, {init} from './helper/exerciseHelper'
+init()
 
-// 🤖 Utilise className pour la taille et le style (backgroundColor) pour la couleur
-// 🤖 chaque element doive avoir "container" className appliqué
+// ✔️ Début de l'exercice
 
-// 🐶 ajoute un props className à chaque element avec le bon nonm 
-// 🤖 Les class names dispo: container, container--large, container--medium, container--small
+// partie 1
+type SomeLanguage = 'js' | 'ts' | 'java'
+// 🐶 change 'any' : exclue 'java' du type 'SomeLanguage'
+type GoodLanguage = any
 
-// 🐶 Ajoute egalement un prop style sur chaque element pour changer le backgroundColor 
-// le text doit aussi etre en italique `fontStyle: 'italic'`
+const lang: GoodLanguage = 'js'
+displayText(`good lang ${lang}`)
 
+type TypeSpecial = string | number | Function
+// 🐶 change 'any' : exclue 'Function' du type 'TypeSpecial'
+type Writable = any
 
+const ts: TypeSpecial = () => {}
+const w: Writable = () => {} //constate erreur de compile
+
+//partie 2
+// 🐶 change 'any' : prend que 'java' de 'SomeLanguage'
+type OldLangage = any
+// 🐶 change 'any' : prend que 'Function' de 'TypeSpecial'
+type F = any
+
+//partie
+type Age = string | number | undefined | null
+// 🐶 change 'any' : supprime les 'null' et 'undefined' de 'Age'
+type NonNullAge = any
+
+/*
+eslint
+  @typescript-eslint/no-unused-vars: "off"
+*/
