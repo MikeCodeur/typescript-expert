@@ -51,7 +51,7 @@ for (const value in mikeSchool) {
 
 let iterator = mikeSchool[Symbol.iterator]()
 while (true) {
-  let result = iterator.next()
-  if (result.done) break
-  displayText(result.value.name)
+  const {value, done} = iterator.next()
+  if (done) break
+  displayText(`${value.name}`)
 }
