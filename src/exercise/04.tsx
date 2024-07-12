@@ -1,9 +1,11 @@
+"use client"
 // Utility Types
 // http://localhost:3000/alone/final/03.ts
 
 // ❌ NE PAS MODIFIER
 // Utilitaire ne faisant pas partie de l'exercice
-import displayText, {init} from './helper/exerciseHelper'
+import displayText, { App, init } from "../lib/exerciseHelper"; 
+const exercice = () => {
 init()
 
 // ✔️ Début de l'exercice
@@ -59,3 +61,5 @@ const todo2: TodoPreview2 = {
 eslint
   @typescript-eslint/no-unused-vars: "off"
 */
+};
+export default () => <App exercice={exercice} />;

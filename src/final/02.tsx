@@ -1,9 +1,11 @@
+"use client"
 // Décorateurs
 // http://localhost:3000/alone/final/01.ts
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // ❌ NE PAS MODIFIER
 // Utilitaire ne faisant pas partie de l'exercice
-import displayText, {init} from './helper/exerciseHelper'
+import displayText, { App, init } from "../lib/exerciseHelper"; 
+const exercice = () => {
 init()
 
 //https://www.typescriptlang.org/docs/handbook/decorators.html
@@ -33,3 +35,5 @@ displayText(book.getName())
 
 const book2 = new Book('La semaine de 4h')
 displayText(book2.getName())
+};
+export default () => <App exercice={exercice} />;

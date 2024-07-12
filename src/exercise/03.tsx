@@ -1,9 +1,11 @@
+"use client"
 // Utility Types
 // http://localhost:3000/alone/final/03.ts
 
 // ❌ NE PAS MODIFIER
 // Utilitaire ne faisant pas partie de l'exercice
-import displayText, {init} from './helper/exerciseHelper'
+import displayText, { App, init } from "../lib/exerciseHelper"; 
+const exercice = () => {
 init()
 
 // ✔️ Début de l'exercice
@@ -60,3 +62,5 @@ const user4: any = {
 }
 user4.name = 'Mike'
 console.log(user4)
+};
+export default () => <App exercice={exercice} />;

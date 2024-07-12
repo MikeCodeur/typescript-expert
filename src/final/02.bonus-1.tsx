@@ -1,10 +1,12 @@
+"use client"
 // Décorateurs
 // http://localhost:3000/alone/final/01.ts
 // 🚀 Décorateur de méthodes avec param
 // ❌ NE PAS MODIFIER
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // Utilitaire ne faisant pas partie de l'exercice
-import displayText, {init} from './helper/exerciseHelper'
+import displayText, { App, init } from "../lib/exerciseHelper"; 
+const exercice = () => {
 init()
 
 //https://www.typescriptlang.org/docs/handbook/decorators.html
@@ -58,3 +60,5 @@ for (let key in book2) {
   console.log('key Book', key)
   displayText(`key Book ${key}`)
 }
+};
+export default () => <App exercice={exercice} />;

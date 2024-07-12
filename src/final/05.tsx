@@ -1,9 +1,11 @@
+"use client"
 // Styling
 // http://localhost:3000/alone/final/01.js
 
 // ❌ NE PAS MODIFIER
 // Utilitaire ne faisant pas partie de l'exercice
-import displayText, {init} from './helper/exerciseHelper'
+import displayText, { App, init } from "../lib/exerciseHelper"; 
+const exercice = () => {
 init()
 
 //Exclude
@@ -31,3 +33,5 @@ type NonNullAge = NonNullable<Age>
 eslint
   @typescript-eslint/no-unused-vars: "off"
 */
+};
+export default () => <App exercice={exercice} />;

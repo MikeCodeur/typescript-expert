@@ -1,9 +1,11 @@
+"use client"
 // Iterator
 // http://localhost:3000/alone/final/01.ts
 
 // ❌ NE PAS MODIFIER
 // Utilitaire ne faisant pas partie de l'exercice
-import displayText, {init} from './helper/exerciseHelper'
+import displayText, { App, init } from "../lib/exerciseHelper"; 
+const exercice = () => {
 init()
 
 type Student = {
@@ -55,3 +57,5 @@ while (true) {
   if (done) break
   displayText(`${value.name}`)
 }
+};
+export default () => <App exercice={exercice} />;
